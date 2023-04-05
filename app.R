@@ -5,15 +5,16 @@ library(shiny)
 library(shinydashboard)
 library(leaflet)
 library(plotly)
-#library(geojsonsf)
+library(geojsonsf)
 library(shinycssloaders)
 library(sf)
+
 
 #Setup, load files, data etc.
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #upload India state boundary layers
-india_state <-  read_sf("./data/india_state_v3.geojson")
-india_district <-  read_sf("./data/india_district_v1.geojson")
+india_state <-geojsonsf::geojson_sf("./data/india_state_v4.geojson")
+india_district <-geojsonsf::geojson_sf("./data/india_district_v3.geojson")
 
 #load sample data for testing
 data <- read.csv("./data/sample_data.csv")
@@ -91,7 +92,7 @@ server <- function(input, output, session) {
   
   #Build state map leaflet  
   output$mymap <- renderLeaflet({
-    leaflet(india_state,options = leafletOptions(minZoom = 5, maxZoom = 6)) %>%
+    leaflet(india_state,options = leafletOptions(minZoom = 3, maxZoom = 6)) %>%
       addTiles(group = "OSM (default)") %>%
       addProviderTiles(providers$Stamen.Toner, group = "Toner") %>%
       addProviderTiles(providers$Stamen.TonerLite, group = "Toner Lite") %>%
@@ -103,7 +104,7 @@ server <- function(input, output, session) {
       )%>%
       addEasyButton(easyButton(
         icon="fa-globe", title="Reset Zoom",
-        onClick=JS("function(btn, map){ map.setZoom(5); }"))) %>%
+        onClick=JS("function(btn, map){ map.setView([23.556154, 78.545369],4); }"))) %>%
       addPolygons(
         label = ~ paste(india_state$State, ":", data[[values$selected_indicator]]),
         stroke = FALSE,
@@ -134,7 +135,7 @@ server <- function(input, output, session) {
   
   #Build district map leaflet
   output$mymap1 <- renderLeaflet({
-    leaflet(india_district,options = leafletOptions(minZoom = 5, maxZoom = 6)) %>%
+    leaflet(india_district,options = leafletOptions(minZoom = 3, maxZoom = 6)) %>%
       addTiles(group = "OSM (default)") %>%
       addProviderTiles(providers$Stamen.Toner, group = "Toner") %>%
       addProviderTiles(providers$Stamen.TonerLite, group = "Toner Lite") %>%
@@ -146,7 +147,7 @@ server <- function(input, output, session) {
       )%>%
       addEasyButton(easyButton(
         icon="fa-globe", title="Reset Zoom",
-        onClick=JS("function(btn, map){ map.setZoom(5); }"))) %>%
+        onClick=JS("function(btn, map){ map.setView([23.556154, 78.545369],4); }"))) %>%
       addPolygons(
         label = ~ paste(india_district$State, ":", data[[values$selected_indicator]]),
         stroke = FALSE,
