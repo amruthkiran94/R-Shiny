@@ -5,14 +5,15 @@ library(shiny)
 library(shinydashboard)
 library(leaflet)
 library(plotly)
-library(geojsonsf)
+#library(geojsonsf)
 library(shinycssloaders)
+library(sf)
 
 #Setup, load files, data etc.
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #upload India state boundary layers
-india_state <-  geojsonsf::geojson_sf("./data/india_state_v3.geojson")
-india_district <-  geojsonsf::geojson_sf("./data/india_district_v2.geojson")
+india_state <-  read_sf("./data/india_state_v3.geojson")
+india_district <-  read_sf("./data/india_district_v1.geojson")
 
 #load sample data for testing
 data <- read.csv("./data/sample_data.csv")
