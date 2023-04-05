@@ -1,0 +1,38 @@
+State_ID,State,indicator_1,indicator_2,indicator_3
+1,Jammu & Kashmir,0.081,0.471,0.835
+2,Himachal Pradesh,0.701,0.047,0.211
+3,Punjab,0.69,0.441,0.239
+4,Chandigarh,0.185,0.407,0.336
+5,Uttarakhand,0.474,0.185,0.814
+6,Haryana,0.674,0.578,0.425
+7,Delhi,0.66,0.796,0.332
+8,Rajasthan,0.126,0.734,0.464
+9,Uttar Pradesh,0.807,0.729,0.856
+10,Bihar,0.17,0.327,0.778
+11,Sikkim,0.86,0.885,0.128
+12,Arunachal Pradesh,0.453,0.916,0.987
+13,Nagaland,0.22,0.508,0.355
+14,Manipur,0.902,0.897,0.222
+15,Mizoram,0.458,0.347,0.546
+16,Tripura,0.063,0.114,0.01
+17,Meghalaya,0.635,0.822,0.826
+18,Assam,0.72,0.256,0.385
+19,West Bengal,0.559,0.705,0.188
+20,Jharkhand,0.08,0.764,0.947
+21,Odisha,0.95,0.794,0.161
+22,Chhattisgarh,0.288,0.195,0.049
+23,Madhya Pradesh,0.086,0.825,0.191
+24,Gujarat,0.118,0.066,0.627
+25,Daman & Diu,0.469,0.11,0.494
+26,Dadra & Nagar Haveli,0.263,0.108,0.951
+27,Maharashtra,0.638,0.529,0.81
+28,Telangana,0.893,0.892,0.407
+28,Andhra Pradesh,0.185,0.349,0.255
+29,Karnataka,0.69,0.389,0.149
+30,Goa,0.075,0.846,0.148
+31,Lakshadweep,0.664,0.395,0.727
+32,Kerala,0.418,0.006,0.787
+33,Tamil Nadu,0.613,0.637,0.785
+34,Puducherry,0.445,0.192,0.12
+35,Andaman and Nicobar Islands,0.35,0.053,0.183
+37,Ladakh,0.564,0.083,0.356
