@@ -10,6 +10,7 @@ library(shinycssloaders)
 library(sf)
 
 
+
 #Setup, load files, data etc.
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #upload India state boundary layers
@@ -18,6 +19,7 @@ india_district <-geojsonsf::geojson_sf("./data/india_district_v3.geojson")
 
 #load sample data for testing
 data <- read.csv("./data/sample_data.csv")
+cascading_data <- read.csv("./data/sample_data_v2.csv")
 values <- reactiveValues(selected_indicator = NA)
 
 #UI part
@@ -175,6 +177,7 @@ server <- function(input, output, session) {
       layout(xaxis = list(title = ""),
              yaxis = list(title = ""))
   })
+  
 }
 
 
