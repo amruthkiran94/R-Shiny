@@ -10,3 +10,4 @@ This repo is a testbed for building dashboard/portals. This is a work-in-progres
 4. Spatial and non-spatial data layers,
 5. Interactivity using Leaflet and Plotly.
 
+The `core` folder contains the main "flagship" application with all the features expected to be developed. The `templates` folder holds various reproducable application that be quickly put together to create a desired dashboard/portal.
