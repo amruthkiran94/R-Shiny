@@ -92,7 +92,7 @@ ui <- dashboardPage(dashboardHeader(title = "Simple tabs"),
 #Server part
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 server <- function(input, output, session) {
-  observeEvent(input$indicator, {
+  observeEvent(input$indicator,{
     values$selected_indicator <- input$indicator
   })
   
