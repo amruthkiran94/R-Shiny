@@ -19,6 +19,7 @@ india_district <-geojsonsf::geojson_sf("./data/india_district_v3.geojson")
 
 #load sample data for testing
 data <- read.csv("./data/sample_data.csv")
+dates <- read.csv("./data/sample_data_year.csv")
 cascading_data <- read.csv("./data/sample_data_v2.csv")
 values <- reactiveValues(selected_indicator = NA)
 
@@ -31,6 +32,11 @@ sidebar <- dashboardSidebar(sidebarMenu(
     textId = "searchText",
     buttonId = "searchButton",
     label = "Search..."
+  ),
+  selectInput(
+    'year',
+    label = 'Select a year',
+    choices = c('2020', '2021', '2022')
   ),
   selectInput(
     'indicator',
