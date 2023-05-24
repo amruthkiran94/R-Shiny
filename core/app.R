@@ -14,13 +14,13 @@ library(sf)
 #Setup, load files, data etc.
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #upload India state boundary layers
-india_state <-geojsonsf::geojson_sf("./data/india_state_v4.geojson")
+india_state <-geojsonsf::geojson_sf("./data/india_all.geojson")
 india_district <-geojsonsf::geojson_sf("./data/india_district_v3.geojson")
 
 #load sample data for testing
-data <- read.csv("./data/sample_data.csv")
-dates <- read.csv("./data/sample_data_year.csv")
-cascading_data <- read.csv("./data/sample_data_v2.csv")
+#data <- read.csv("./data/sample_data.csv")
+#dates <- read.csv("./data/sample_data_year.csv")
+#cascading_data <- read.csv("./data/sample_data_v2.csv")
 values <- reactiveValues(selected_indicator = NA)
 
 #UI part
@@ -36,7 +36,7 @@ sidebar <- dashboardSidebar(sidebarMenu(
   selectInput(
     'year',
     label = 'Select a year',
-    choices = c('2020', '2021', '2022')
+    choices = c('2020', '2021', '2022','2023')
   ),
   selectInput(
     'indicator',
@@ -94,6 +94,9 @@ ui <- dashboardPage(dashboardHeader(title = "Simple tabs"),
 server <- function(input, output, session) {
   observeEvent(input$indicator,{
     values$selected_indicator <- input$indicator
+  })
+  observeEvent(input$year,{
+    values$selected_year <- input$year
   })
   
   pal <- colorNumeric('Reds', NULL)
